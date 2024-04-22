@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Ipsum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="lorem-container">
+    <p id="pdf-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Sed euismod, nunc at cursus pellentesque,<br> nisl eros pellentesque quam,<br> a faucibus nisl nunc id nisl. Morbi auctor, nunc at cursus pellentesquebr, <br> nisl eros pellentesque quam, a faucibus nisl nunc id nisl. Morbi auctor, <br> nunc at cursus pellentesque, nisl eros pellentesque quam, <br>a faucibus nisl nunc id nisl.</p>
+</div>
+
+<a href="index.html">click here to go on main page</a>
+
+<button id="generate-pdf">Generate PDF</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    
+    <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+        <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
+        </script>
+    
+    <script type="text/javascript">
+			 const generatePdfButton = document.getElementById('generate-pdf');
+
+generatePdfButton.addEventListener('click', () => {
+  const pdfContent = document.getElementById('pdf-content').innerText;
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  doc.setFont('times');
+  doc.text(pdfContent, 10, 10);
+  doc.save("RecconisanceData.pdf");
+
+
+});
+	</script>	 
+
+</body>
+</html>
