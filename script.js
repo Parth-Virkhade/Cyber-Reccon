@@ -20,3 +20,11 @@ generatePdfButton.addEventListener('click', () => {
 
   html2pdf().from(pdfContent).set(opt).save();
 });
+
+const cardButtons = document.querySelectorAll('.card-button');
+
+cardButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    alert('Thank you for your purchase!');
+  });
+});
